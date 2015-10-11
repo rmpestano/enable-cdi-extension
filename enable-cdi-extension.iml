@@ -110,5 +110,13 @@
     <orderEntry type="library" name="Maven: org.jboss.arquillian.testenricher:arquillian-testenricher-resource:1.1.9.Final" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.arquillian.testenricher:arquillian-testenricher-cdi:1.1.9.Final" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.arquillian.testenricher:arquillian-testenricher-initialcontext:1.1.9.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.deltaspike.core:deltaspike-core-impl:1.5.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.deltaspike.core:deltaspike-core-api:1.5.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.deltaspike.cdictrl:deltaspike-cdictrl-owb:1.5.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.deltaspike.cdictrl:deltaspike-cdictrl-api:1.5.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.openwebbeans:openwebbeans-impl:1.6.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.xbean:xbean-finder-shaded:4.3" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.xbean:xbean-asm5-shaded:4.3" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.openwebbeans:openwebbeans-spi:1.6.2" level="project" />
   </component>
 </module>

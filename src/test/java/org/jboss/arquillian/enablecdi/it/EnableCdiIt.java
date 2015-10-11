@@ -23,7 +23,6 @@ import static org.junit.Assert.assertNotNull;
  * Created by pestano on 10/10/15.
  */
 @RunWith(EnableCdiTestRunner.class)
-@EnableCdi
 public class EnableCdiIt {
 
     @Deployment(name = "test.jar")
