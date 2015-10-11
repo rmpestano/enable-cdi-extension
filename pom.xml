@@ -11,7 +11,7 @@
             <dependency>
                 <groupId>org.arquillian</groupId>
                 <artifactId>arquillian-universe</artifactId>
-                <version>1.0.0.Alpha1-SNAPSHOT</version>
+                <version>1.0.0.Alpha1</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
