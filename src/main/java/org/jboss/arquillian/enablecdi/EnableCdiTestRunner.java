@@ -16,28 +16,22 @@ public class EnableCdiTestRunner extends Arquillian {
 
     public EnableCdiTestRunner(Class<?> testClass) throws InitializationError {
         super(testClass);
-        cdiContainer = CdiContainerLoader.getCdiContainer();
     }
 
 
-    @Override
-    protected Statement withBeforeClasses(Statement originalStatement) {
-        cdiContainer.boot();
-        Statement statement = super.withBeforeClasses(originalStatement);
-
-        return statement;
-    }
-
-    @Override
-    protected Statement withAfterClasses(Statement originalStatement) {
-        Statement statement = super.withAfterClasses(originalStatement);
-        cdiContainer.shutdown();
-        return statement;
-    }
 
     @Override
     protected Object createTest() throws Exception {
-        return BeanProvider.getContextualReference(getTestClass().getJavaClass(), false);
+        Object ref = null;
+        try {
+            ref = BeanProvider.getContextualReference(getTestClass().getJavaClass(), true);
+        } catch (Exception e) {
+            // not in a container, not in a bean archive
+        }
+        if (ref == null){
+            return super.createTest();
+        }
+        return ref;
     }
 
 
