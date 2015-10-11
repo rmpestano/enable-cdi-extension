@@ -11,7 +11,6 @@ public class EnableCdiExtension implements LoadableExtension {
 
 
     public void register(ExtensionBuilder extensionBuilder) {
-       extensionBuilder.service(ApplicationArchiveProcessor.class, EnableCdiArchiveProcessor.class);
        extensionBuilder.service(AuxiliaryArchiveAppender.class, EnableCdiAuxiliaryArchive.class);
        //extensionBuilder.service(TestEnricher.class, EnableCdiEnricher.class);
     }

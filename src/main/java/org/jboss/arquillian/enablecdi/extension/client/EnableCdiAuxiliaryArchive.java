@@ -11,6 +11,8 @@ public class EnableCdiAuxiliaryArchive implements AuxiliaryArchiveAppender {
     public Archive<?> createAuxiliaryArchive() {
         return ShrinkWrap.create(JavaArchive.class, "arquillian-enable-cdi.jar")
                 .addPackages(true, EnableCdiTestRunner.class.getPackage().getName());
+
+
     }
 
 }

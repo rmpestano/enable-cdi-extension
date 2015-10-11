@@ -27,8 +27,6 @@ public class EnableCdiIt {
         WebArchive war = ShrinkWrap.create(WebArchive.class);
         war.addPackage(ThrowInterceptor.class.getPackage());
         war.addClass(CustomException.class);
-        war.addClass(EnableCdiIt.class);
-        //war.addAsResource("beans.xml", "META-INF/beans.xml");
         war.addAsWebInfResource("beans.xml", "beans.xml");
         System.out.println(war.toString(true));
         return war;
