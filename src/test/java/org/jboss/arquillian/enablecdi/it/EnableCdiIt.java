@@ -29,7 +29,7 @@ public class EnableCdiIt {
         war.addClass(CustomException.class);
         war.addClass(EnableCdiIt.class);
         //war.addAsResource("beans.xml", "META-INF/beans.xml");
-        war.addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
+        war.addAsWebInfResource("beans.xml", "beans.xml");
         System.out.println(war.toString(true));
         return war;
     }
