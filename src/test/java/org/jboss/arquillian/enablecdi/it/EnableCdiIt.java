@@ -1,5 +1,7 @@
 package org.jboss.arquillian.enablecdi.it;
 
+import javax.faces.bean.RequestScoped;
+
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.enablecdi.EnableCdiTestRunner;
 import org.jboss.arquillian.enablecdi.exception.CustomException;
@@ -7,6 +9,7 @@ import org.jboss.arquillian.enablecdi.interceptor.Throw;
 import org.jboss.arquillian.enablecdi.interceptor.ThrowInterceptor;
 import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
+import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Assert;
@@ -19,14 +22,14 @@ import org.junit.runner.RunWith;
 @RunWith(EnableCdiTestRunner.class)
 public class EnableCdiIt {
 
-    @Deployment(name = "test.war")
+    @Deployment
     public static Archive<?> createDeployment() {
         WebArchive war = ShrinkWrap.create(WebArchive.class);
         war.addPackage(ThrowInterceptor.class.getPackage());
         war.addClass(CustomException.class);
         war.addClass(EnableCdiIt.class);
         //war.addAsResource("beans.xml", "META-INF/beans.xml");
-        war.addAsWebInfResource("beans.xml", "beans.xml");
+        war.addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
         System.out.println(war.toString(true));
         return war;
     }
